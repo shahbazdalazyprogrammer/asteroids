@@ -19,7 +19,6 @@ class Asteroid(CircleShape):
     def split(self):
         self.kill()
         if self.radius <= ASTEROID_MIN_RADIUS:
-            print(f"after split and killed = {self.velocity}")
             return
         else:
             
@@ -27,8 +26,6 @@ class Asteroid(CircleShape):
             angle = random.uniform(20, 50)
             first_vector = self.velocity.rotate(angle)
             second_vector = self.velocity.rotate(-1 * angle)
-            print(f"after split and spawned = {first_vector} {second_vector}")
-
 
             new_radius = self.radius  - ASTEROID_MIN_RADIUS
             asteroid_1 = Asteroid(self.position[0], self.position[1], new_radius)

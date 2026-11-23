@@ -60,9 +60,6 @@ def main():
             for shot in shots:
                 if shot.collides_with(ast):
                     log_event("asteroid_shot")
-                    print(f"Asteroid: {ast} is killed by shot: {shot} \n ##--##")
-                    print(ast.radius)
-                    print(f"before split = {ast.velocity}")
                     ast.split()
                     pygame.sprite.Sprite.kill(shot)
         
